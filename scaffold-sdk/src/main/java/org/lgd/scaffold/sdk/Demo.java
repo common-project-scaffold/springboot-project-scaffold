@@ -1,4 +1,4 @@
-package org.exmaple.scaffold.sdk;
+package org.lgd.scaffold.sdk;
 
 /**
  * <p>

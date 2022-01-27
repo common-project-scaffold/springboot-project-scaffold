@@ -67,6 +67,8 @@ public class HutoolTests {
 
         File target = FileUtil.copyFilesFromDir(new File(datasetVersionPath), new File(datasetVersionPathTarget), true);
         System.out.println(target.getPath());
+
+//        FileUtil.del()
     }
 
 

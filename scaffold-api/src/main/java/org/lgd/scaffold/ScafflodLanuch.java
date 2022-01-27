@@ -1,4 +1,4 @@
-package org.exmaple.scaffold;
+package org.lgd.scaffold;
 
 /**
  * <p>
