@@ -80,3 +80,12 @@ mvn checkstyle:check
 
 mvn checkstyle:checkstyle
 ```
+
+
+## 
+
+```bash
+
+chmod 700 .git/hooks/*
+
+```

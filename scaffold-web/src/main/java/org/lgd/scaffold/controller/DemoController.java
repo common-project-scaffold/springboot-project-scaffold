@@ -22,14 +22,13 @@ public class DemoController {
 	 * 测试注释换行
 	 * 
 	 * @param name 姓名
-	 * @return 返回结果
+	 * @return
 	 */
 	public String hello(String name) {
 
 		if (Objects.equals("Admin", name)) {
-
-
-			     return String.format("hello, big boss", name);
+			// 是否超级管理员
+			      return String.format("hello, big boss", name);
 		}
 		return String.format("hello,  %s", name);
 	}
