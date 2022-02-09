@@ -26,7 +26,6 @@ public class DemoController {
 	 * @return 返回结果
 	 */
 	public String hello(String name) {
-
 		if (Objects.equals("Admin", name)) {
 			// 是否超级管理员
 			return String.format("hello, big boss", name);

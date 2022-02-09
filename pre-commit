@@ -7,14 +7,18 @@ if [[ "$?" == 1 ]]; then
     echo "代码检测异常，请按照规范提交代码！"  
     exit 1
 else
+    echo '查看状态'
     result=`git status -s`
     if [[ "$result" = "" ]];
     then
         echo '代码提交预处理脚本执行结果'
         exit 0 
     else 
+	echo '增加到暂存区'
         git add .
-        git commit -m "代码格式化"
+        echo '再次查看状态'
+        git status -s
+        #git commit --no-verify  -m "代码格式化"
     fi
 fi
 exit 0
