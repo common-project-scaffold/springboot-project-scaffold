@@ -55,3 +55,28 @@ cd springboot-project-scaffold
 mvn clean install
 ```
 
+## 代码格式化
+
+`formatter-maven-plugin`
+
+```bash
+mvn clean package
+```
+
+### 配置说明
+```bash
+comment.format_javadoc_comments（TRUE, FALSE）：用于控制javadoc注释是否被格式化，默认为TRUE；
+```
+参考文档：[格式化模板（Formatter）配置详解](https://blog.csdn.net/u010904188/article/details/81204738)
+
+
+## 静态代码风格检测
+
+`maven-checkstyle-plugin`
+
+
+```bash
+mvn checkstyle:check
+
+mvn checkstyle:checkstyle
+```

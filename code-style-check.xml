@@ -9,5 +9,29 @@
         <property name="max" value="1000"/>
     </module>
 
-    <module name="TreeWalker"></module>
+    <module name="TreeWalker">
+
+        <!-- 检查方法的javadoc的注释
+            scope: 可以检查的方法的范围，例如：public只能检查public修饰的方法，private可以检查所有的方法
+            allowMissingParamTags: 是否忽略对参数注释的检查
+            allowMissingThrowsTags: 是否忽略对throws注释的检查
+            allowMissingReturnTag: 是否忽略对return注释的检查 -->
+        <module name="JavadocMethod">
+            <property name="scope" value="private"/>
+            <property name="allowMissingParamTags" value="false"/>
+            <property name="allowMissingThrowsTags" value="false"/>
+            <property name="allowMissingReturnTag" value="false"/>
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="allowUndeclaredRTE" value="true"/>
+            <property name="allowThrowsTagsForSubclasses" value="true"/>
+            <!--允许get set方法没有注释-->
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+        </module>
+
+
+        <!-- constants (static,  final fields) -->
+        <module name="ConstantName">
+            <property name="format" value="(^[A-Z0-9_]{0,19}$)"/>
+        </module>
+    </module>
 </module>

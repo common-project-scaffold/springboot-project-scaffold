@@ -3,12 +3,11 @@ package org.lgd.scaffold.domain;
 import lombok.Data;
 
 /**
- * <p>
- * Project: springboot-project-scaffold
- * Package: org.lgd.scaffold.domain
- * Title: UserInfo
- * Description: UserInfo
- * </p>
+ *
+ * @Project: springboot-project-scaffold
+ * @Package: org.lgd.scaffold.domain
+ * @Title: UserInfo
+ * @Description: UserInfo
  *
  * @author liguodong
  * @version 1.0.0
@@ -18,8 +17,12 @@ import lombok.Data;
 @Data
 public class UserInfo {
 
-private String name;
+	// 姓名
+	private String name;
 
-        private Integer age;
+	/**
+	 * 年龄
+	 */
+	private Integer age;
 
 }

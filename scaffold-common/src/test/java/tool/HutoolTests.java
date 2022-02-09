@@ -22,26 +22,25 @@ import java.util.Map;
  * @date 2022/1/26
  */
 
-
 public class HutoolTests {
 
-    String basePath = "/Users/liguodong/temp/file";
+	String basePath = "/Users/liguodong/temp/file";
 
-    @Test
-    public void testmMkdir(){
-        String datasetPath = basePath + FileUtil.FILE_SEPARATOR + 55;
+	@Test
+	public void testmMkdir() {
+		String datasetPath = basePath + FileUtil.FILE_SEPARATOR + 55;
 
-        FileUtil.mkdir(datasetPath);
-        String datasetVersionPath = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 101;
-        String datasetVersionPath2 = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 102;
-        String datasetVersionPath3 = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 55;
+		FileUtil.mkdir(datasetPath);
+		String datasetVersionPath = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 101;
+		String datasetVersionPath2 = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 102;
+		String datasetVersionPath3 = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 55;
 
-        FileUtil.mkdir(datasetVersionPath);
-        FileUtil.mkdir(datasetVersionPath2);
-        FileUtil.mkdir(datasetVersionPath3);
-    }
+		FileUtil.mkdir(datasetVersionPath);
+		FileUtil.mkdir(datasetVersionPath2);
+		FileUtil.mkdir(datasetVersionPath3);
+	}
 
-    @Test
+	@Test
     public void testTouch(){
         String datasetVersionPath = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 101;
         File file = FileUtil.touch(datasetVersionPath, "dict.json");
@@ -60,20 +59,15 @@ public class HutoolTests {
         FileUtil.writeUtf8String(dictStr, file);
     }
 
-    @Test
-    public void testCopyDir(){
-        String datasetVersionPath = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 101;
-        String datasetVersionPathTarget = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 200;
+	@Test
+	public void testCopyDir() {
+		String datasetVersionPath = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 101;
+		String datasetVersionPathTarget = basePath + FileUtil.FILE_SEPARATOR + 55 + FileUtil.FILE_SEPARATOR + 200;
 
-        File target = FileUtil.copyFilesFromDir(new File(datasetVersionPath), new File(datasetVersionPathTarget), true);
-        System.out.println(target.getPath());
+		File target = FileUtil.copyFilesFromDir(new File(datasetVersionPath), new File(datasetVersionPathTarget), true);
+		System.out.println(target.getPath());
 
-//        FileUtil.del()
-    }
-
-
-
-
-
+		// FileUtil.del()
+	}
 
 }

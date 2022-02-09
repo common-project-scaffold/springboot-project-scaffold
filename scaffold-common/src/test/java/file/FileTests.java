@@ -8,10 +8,7 @@ import java.util.List;
 
 /**
  * <p>
- * Project: springboot-project-scaffold
- * Package: file
- * Title: FileTests
- * Description: FileTests
+ * Project: springboot-project-scaffold Package: file Title: FileTests Description: FileTests
  * </p>
  *
  * @author liguodong
@@ -21,10 +18,10 @@ import java.util.List;
 
 public class FileTests {
 
-    @Test
-    public void test(){
-        String dir = "/User/liguodong";
-        List<File> files = FileUtil.loopFiles(dir);
-    }
+	@Test
+	public void test() {
+		String dir = "/User/liguodong";
+		List<File> files = FileUtil.loopFiles(dir);
+	}
 
 }

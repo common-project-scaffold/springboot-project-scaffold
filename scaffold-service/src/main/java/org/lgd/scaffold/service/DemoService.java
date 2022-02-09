@@ -2,10 +2,8 @@ package org.lgd.scaffold.service;
 
 /**
  * <p>
- * Project: springboot-project-scaffold
- * Package: org.exmaple.scaffold.service
- * Title: DemoService
- * Description: DemoService
+ * Project: springboot-project-scaffold Package: org.exmaple.scaffold.service Title: DemoService Description:
+ * DemoService
  * </p>
  *
  * @author liguodong

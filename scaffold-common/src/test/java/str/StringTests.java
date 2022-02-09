@@ -8,10 +8,7 @@ import org.junit.Test;
 
 /**
  * <p>
- * Project: springboot-project-scaffold
- * Package: str
- * Title: StringTests
- * Description: StringTests
+ * Project: springboot-project-scaffold Package: str Title: StringTests Description: StringTests
  * </p>
  *
  * @author liguodong
@@ -19,32 +16,27 @@ import org.junit.Test;
  * @date 2022/1/27
  */
 
-//此注解需要引入Log4j2相关包才能生效
+// 此注解需要引入Log4j2相关包才能生效
 @Log4j2
 public class StringTests {
 
+	@Test
+	public void testConcat() {
 
-    @Test
-    public void testConcat(){
+		String basePath = "/home/guodong";
+		String model = "model";
 
-        String basePath = "/home/guodong";
-        String model = "model";
+		String fileSep = FileUtil.FILE_SEPARATOR;
+		log.info("分割：{}", fileSep);
+		log.info("分割：{}", FileUtil.PATH_SEPARATOR);
+		System.out.println(fileSep);
+		System.out.println(FileUtil.PATH_SEPARATOR);
 
-        String fileSep = FileUtil.FILE_SEPARATOR;
-        log.info("分割：{}", fileSep);
-        log.info("分割：{}", FileUtil.PATH_SEPARATOR);
-        System.out.println(fileSep);
-        System.out.println(FileUtil.PATH_SEPARATOR);
+		System.out.println(String.format("%s/%s/%s", "/home/lgd", "model", "version"));
+		Long projectId = 101L;
 
+		System.out.println(String.format("%s/%s/%s", "/home/lgd", projectId, "model"));
 
-        System.out.println(String.format("%s/%s/%s","/home/lgd", "model", "version"));
-        Long projectId = 101L;
-
-        System.out.println(String.format("%s/%s/%s", "/home/lgd", projectId, "model"));
-
-    }
-
-
-
+	}
 
 }

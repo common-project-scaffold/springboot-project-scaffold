@@ -4,10 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
- * Project: springboot-project-scaffold
- * Package: str
- * Title: Demo
- * Description: Demo
+ * Project: springboot-project-scaffold Package: str Title: Demo Description: Demo
  * </p>
  *
  * @author liguodong
@@ -18,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Demo {
 
-    public static void main(String[] args) {
-        log.info("info:{}", System.currentTimeMillis());
-    }
+	public static void main(String[] args) {
+		log.info("info:{}", System.currentTimeMillis());
+	}
 
 }

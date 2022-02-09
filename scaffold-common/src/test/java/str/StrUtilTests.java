@@ -5,10 +5,7 @@ import org.junit.Test;
 
 /**
  * <p>
- * Project: springboot-project-scaffold
- * Package: str
- * Title: StrUtilTests
- * Description: StrUtilTests
+ * Project: springboot-project-scaffold Package: str Title: StrUtilTests Description: StrUtilTests
  * </p>
  *
  * @author liguodong
@@ -18,18 +15,15 @@ import org.junit.Test;
 
 public class StrUtilTests {
 
+	@Test
+	public void test() {
+		String imagePath = "/home/lgd/pic/xxx.jpg";
 
-    @Test
-    public void test(){
-        String imagePath = "/home/lgd/pic/xxx.jpg";
+		String imageName = StrUtil.subAfter(imagePath, StrUtil.C_SLASH, true);
+		System.out.println(imageName);
 
-        String imageName = StrUtil.subAfter(imagePath, StrUtil.C_SLASH, true);
-        System.out.println(imageName);
-
-        String jsonName = StrUtil.subBefore(imageName, StrUtil.C_DOT, true)+".json";
-        System.out.println(jsonName);
-    }
-
-
+		String jsonName = StrUtil.subBefore(imageName, StrUtil.C_DOT, true) + ".json";
+		System.out.println(jsonName);
+	}
 
 }
