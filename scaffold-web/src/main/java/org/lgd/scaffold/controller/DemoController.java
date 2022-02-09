@@ -30,6 +30,8 @@ public class DemoController {
 			// 是否超级管理员
 			return String.format("hello, big boss", name);
 		}
+		// 测试代码格式化
+		System.out.println("测试代码格式化");
 		return String.format("hello,  %s", name);
 	}
 
