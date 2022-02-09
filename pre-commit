@@ -8,7 +8,7 @@ if [[ "$?" == 1 ]]; then
     exit 1
 else
     result=`git status -s`
-    if [ "$result" = ""]
+    if [[ "$result" = "" ]];
     then
         echo '代码提交预处理脚本执行结果'
         exit 0 
