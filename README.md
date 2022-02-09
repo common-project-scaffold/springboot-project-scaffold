@@ -1,12 +1,13 @@
 # springboot-project-scaffold
 
+SpringBoot项目脚手架，快速完成一个WEB项目的初始化工作。
 
+## 项目结构及其依赖
 
-
-```
+```bash
 .
 ├── README.md
-├── pom.xml
+├── pom.xml  # 父pom
 ├── scaffold-sdk
 ├── scaffold-common
 ├── scaffold-domain
@@ -17,8 +18,6 @@
 ├── scaffold-api（scaffold-task）
 
 ```
-
-
 
 ## 项目版本控制
 

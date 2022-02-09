@@ -36,6 +36,15 @@ public class StringTests {
         System.out.println(fileSep);
         System.out.println(FileUtil.PATH_SEPARATOR);
 
+
+        System.out.println(String.format("%s/%s/%s","/home/lgd", "model", "version"));
+        Long projectId = 101L;
+
+        System.out.println(String.format("%s/%s/%s", "/home/lgd", projectId, "model"));
+
     }
+
+
+
 
 }
