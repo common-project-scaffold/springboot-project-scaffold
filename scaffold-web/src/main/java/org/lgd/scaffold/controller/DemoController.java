@@ -20,15 +20,16 @@ public class DemoController {
 	/**
 	 * 这是一个测试接口，<br/>
 	 * 测试注释换行
-	 * 
+	 *
+	 *
 	 * @param name 姓名
-	 * @return
+	 * @return 返回结果
 	 */
 	public String hello(String name) {
 
 		if (Objects.equals("Admin", name)) {
 			// 是否超级管理员
-			      return String.format("hello, big boss", name);
+			return String.format("hello, big boss", name);
 		}
 		return String.format("hello,  %s", name);
 	}

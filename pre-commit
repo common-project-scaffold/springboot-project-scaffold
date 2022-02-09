@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+mvn clean package -Dmaven.test.skip=true  
+
+if [[ "$?" == 1 ]]; then
+    echo "代码检测异常，请按照规范提交代码！"  
+    exit 1
+else
+  git status
+  git add .
+  #git commit -m "代码格式化"
+fi
+exit 0
