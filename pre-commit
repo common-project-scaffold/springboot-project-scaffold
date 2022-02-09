@@ -14,7 +14,7 @@ else
         echo '代码提交预处理脚本执行结果'
         exit 0 
     else 
-	echo '增加到暂存区'
+        echo '增加到暂存区'
         git add .
         echo '再次查看状态'
         git status -s
