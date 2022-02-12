@@ -82,10 +82,16 @@ mvn checkstyle:checkstyle
 ```
 
 
-## 
+## 项目初始化
+
 
 ```bash
+sh init.sh
+```
 
-chmod 700 .git/hooks/*
 
+## swagger
+
+```http request
+http://localhost:8080/swagger-ui.html
 ```

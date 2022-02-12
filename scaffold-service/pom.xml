@@ -26,13 +26,11 @@
     <dependency>
       <groupId>org.lgd</groupId>
       <artifactId>scaffold-dao</artifactId>
-      <version>1.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>org.lgd</groupId>
       <artifactId>scaffold-common</artifactId>
-      <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

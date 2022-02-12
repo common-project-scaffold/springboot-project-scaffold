@@ -26,7 +26,6 @@
     <dependency>
       <groupId>org.lgd</groupId>
       <artifactId>scaffold-service</artifactId>
-      <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

@@ -4,7 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
- * Project: springboot-project-scaffold Package: str Title: Demo Description: Demo
+ * @Project: springboot-project-scaffold
+ * @Package: str
+ * @Title: Demo
+ * @Description: Demo
  * </p>
  *
  * @author liguodong

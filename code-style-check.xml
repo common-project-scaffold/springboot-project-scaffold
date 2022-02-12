@@ -18,9 +18,9 @@
             allowMissingReturnTag: 是否忽略对return注释的检查 -->
         <module name="JavadocMethod">
             <property name="scope" value="private"/>
-            <property name="allowMissingParamTags" value="false"/>
-            <property name="allowMissingThrowsTags" value="false"/>
-            <property name="allowMissingReturnTag" value="false"/>
+            <property name="allowMissingParamTags" value="true"/>
+            <property name="allowMissingThrowsTags" value="true"/>
+            <property name="allowMissingReturnTag" value="true"/>
             <property name="tokens" value="METHOD_DEF"/>
             <property name="allowUndeclaredRTE" value="true"/>
             <property name="allowThrowsTagsForSubclasses" value="true"/>

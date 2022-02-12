@@ -1,5 +1,7 @@
 package org.lgd.scaffold.sdk;
 
+import lombok.Data;
+
 /**
  * <p>
  * Project: springboot-project-scaffold Package: org.exmaple.scaffold.sdk Title: Demo Description: Demo
@@ -10,6 +12,7 @@ package org.lgd.scaffold.sdk;
  * @date 2022/1/18
  */
 
+@Data
 public class User {
 
 	// 姓名

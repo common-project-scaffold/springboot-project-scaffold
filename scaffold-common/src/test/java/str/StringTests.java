@@ -5,10 +5,15 @@ import cn.hutool.core.io.FileUtil;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
- * Project: springboot-project-scaffold Package: str Title: StringTests Description: StringTests
+ * @Project: springboot-project-scaffold
+ * @Package: str
+ * @Title: StringTests
+ * @Description: StringTests
  * </p>
  *
  * @author liguodong
