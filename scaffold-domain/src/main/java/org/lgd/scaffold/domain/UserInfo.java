@@ -1,6 +1,9 @@
 package org.lgd.scaffold.domain;
 
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
@@ -15,14 +18,14 @@ import lombok.Data;
  */
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserInfo {
 
-	// 姓名
+	@ApiModelProperty(value = "姓名")
 	private String name;
 
-	/**
-	 * 年龄
-	 */
+	@ApiModelProperty(value = "年龄")
 	private Integer age;
 
 }
