@@ -5,13 +5,11 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.lgd.scaffold.common.util.CommonUtil;
-import org.lgd.scaffold.domain.BaseResponse;
+import org.lgd.scaffold.domain.response.BaseResponse;
 import org.lgd.scaffold.domain.UserInfo;
 import org.lgd.scaffold.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -74,6 +72,19 @@ public class DemoController {
 			HttpServletRequest httpRequest) {
 		log.info(httpRequest.getQueryString());
 		return BaseResponse.success(new UserInfo(name, age));
+	}
+
+	/**
+	 *
+	 * @param type
+	 * @return
+	 */
+	@GetMapping("/exception")
+	@ApiOperation(value = "全局异常处理接口", notes = "全局异常处理接口")
+	public BaseResponse exception(
+			@ApiParam(name = "type", value = "异常类型", required = true) @RequestParam(value = "type", defaultValue = "admin") String type) {
+		log.info("异常类型：{}", type);
+		return BaseResponse.success(demoService.handleExceptionType(type));
 	}
 
 }

@@ -1,4 +1,4 @@
-package org.lgd.scaffold.domain;
+package org.lgd.scaffold.domain.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

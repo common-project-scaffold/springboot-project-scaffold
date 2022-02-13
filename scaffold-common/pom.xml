@@ -21,13 +21,16 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.lgd.scaffold</groupId>
+      <artifactId>scaffold-domain</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
       <version>5.7.20</version>
     </dependency>
-
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
@@ -38,7 +41,6 @@
       <artifactId>guava</artifactId>
       <version>31.0.1-jre</version>
     </dependency>
-
     <!--
       开源迷你框架，包含工具类、实用功能的集合
       https://repo1.maven.org/maven2/org/jodd/jodd-all/5.1.0/
@@ -48,7 +50,6 @@
       <artifactId>jodd-all</artifactId>
       <version>5.1.0</version>
     </dependency>
-
     <!--
       https://repo1.maven.org/maven2/org/apache/commons/
       https://commons.apache.org/components.html
@@ -58,7 +59,6 @@
       <artifactId>commons-collections4</artifactId>
       <version>4.4</version>
     </dependency>
-
   </dependencies>
 
   <build>
