@@ -57,17 +57,22 @@ public class SwaggerConfig {
 	 * 配置认证上下文
 	 */
 	private List<SecurityContext> securityContexts() {
-		return newArrayList(SecurityContext.builder().securityReferences(defaultAuth()).forPaths(PathSelectors.any()).build());
+		return newArrayList(SecurityContext.builder()
+		// 全局认证
+		.securityReferences(defaultAuth())
+		// 过滤要验证的路径
+		.forPaths(PathSelectors.any()).build());
 	}
 
 	/**
-	 * 认证
+	 * 全局认证
 	 * @return
 	 */
 	private List<SecurityReference> defaultAuth() {
 		AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
 		AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
 		authorizationScopes[0] = authorizationScope;
+		// 验证增加
 		return newArrayList(new SecurityReference("Authorization", authorizationScopes));
 	}
 
@@ -75,6 +80,6 @@ public class SwaggerConfig {
 	 * 项目信息
 	 */
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("后端项目脚手架").version("1.0.0").build();
+		return new ApiInfoBuilder().title("后端项目脚手架").description("后端项目脚手架接口描述").version("1.0.0").build();
 	}
 }

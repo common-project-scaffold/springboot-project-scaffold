@@ -1,10 +1,13 @@
 package org.lgd.scaffold.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.lgd.scaffold.common.util.CommonUtil;
+import org.lgd.scaffold.domain.AuthorizationInfo;
+import org.lgd.scaffold.domain.annotations.RequestToken;
 import org.lgd.scaffold.domain.response.BaseResponse;
 import org.lgd.scaffold.domain.UserInfo;
 import org.lgd.scaffold.service.DemoService;
@@ -46,8 +49,8 @@ public class DemoController {
 	 */
 	@GetMapping("/hello")
 	@ApiOperation(value = "根据name查询打招呼", notes = "根据name查询给某人打招呼")
-	public BaseResponse<String> hello(String name) {
-		log.info("入参：{}", name);
+	public BaseResponse<String> hello(String name, @RequestToken AuthorizationInfo authorizationInfo) {
+		log.info("入参：{}, 认证信息：{} ", name, JSONObject.toJSONString(authorizationInfo));
 		demoService.helloPreHandle(name);
 		CommonUtil.strPreHandle(name);
 		if (Objects.equals("Admin", name)) {
