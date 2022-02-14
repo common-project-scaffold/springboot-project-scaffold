@@ -16,10 +16,10 @@ import lombok.Data;
  * @Date 2022/2/13
  */
 
-public enum StatusCodeEnum {
+public enum StatusCodeEnum implements IBaseEnum<Integer> {
 
-	success(10000, "成功"),
-	fail(20000, "失败"), ;
+	SUCCESS(10000, "成功"),
+	ERROR(20000, "失败"), ;
 
 	private Integer code;
 
@@ -34,6 +34,7 @@ public enum StatusCodeEnum {
 	 *
 	 * @return
 	 */
+	@Override
 	public Integer code() {
 		return code;
 	}
@@ -42,6 +43,7 @@ public enum StatusCodeEnum {
 	 *
 	 * @return
 	 */
+	@Override
 	public String desc() {
 		return desc;
 	}

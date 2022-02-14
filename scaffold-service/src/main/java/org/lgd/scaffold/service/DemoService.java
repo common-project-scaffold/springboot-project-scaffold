@@ -46,7 +46,7 @@ public class DemoService {
 	public String handleExceptionType(String type) {
 		UserInfo userInfo = null;
 		if (Objects.equals(type, "BusinessException")) {
-			throw new BusinessException(StatusCodeEnum.fail.code(), "BusinessException处理");
+			throw new BusinessException(StatusCodeEnum.ERROR.code(), "BusinessException处理");
 		} else if (Objects.equals(type, "NullPointerException")) {
 			// throw new NullPointerException("用户名不能为空");
 			userInfo.getAge();

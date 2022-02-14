@@ -45,7 +45,7 @@ public class BaseResponse<T> {
 	 * @return
 	 */
 	public static <T> BaseResponse success(T data) {
-		return new BaseResponse(StatusCodeEnum.success.code(), StatusCodeEnum.success.desc(), data);
+		return new BaseResponse(StatusCodeEnum.SUCCESS.code(), StatusCodeEnum.SUCCESS.desc(), data);
 	}
 
 	/**
@@ -54,8 +54,8 @@ public class BaseResponse<T> {
 	 * @param <T>
 	 * @return
 	 */
-	public static <T> BaseResponse fail(String message) {
-		return new BaseResponse(StatusCodeEnum.fail.code(), message, null);
+	public static <T> BaseResponse error(String message) {
+		return new BaseResponse(StatusCodeEnum.ERROR.code(), message, null);
 	}
 
 	/**

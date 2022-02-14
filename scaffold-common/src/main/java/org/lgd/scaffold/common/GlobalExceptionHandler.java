@@ -39,7 +39,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value = Exception.class)
 	public BaseResponse exceptionHandler(HttpServletRequest httpServletRequest, Exception e) {
 		log.error("发生未知异常！原因是:", e);
-		return BaseResponse.fail("未知异常");
+		return BaseResponse.error("未知异常");
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class GlobalExceptionHandler {
 	@ResponseBody
 	public BaseResponse exceptionHandler(HttpServletRequest req, NullPointerException e) {
 		log.error("发生空指针异常！原因是:", e);
-		return BaseResponse.fail(e.getMessage());
+		return BaseResponse.error(e.getMessage());
 	}
 
 }
