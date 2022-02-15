@@ -12,11 +12,16 @@ import org.lgd.scaffold.domain.response.BaseResponse;
 import org.lgd.scaffold.domain.UserInfo;
 import org.lgd.scaffold.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -88,6 +93,47 @@ public class DemoController {
 			@ApiParam(name = "type", value = "异常类型", required = true) @RequestParam(value = "type", defaultValue = "admin") String type) {
 		log.info("异常类型：{}", type);
 		return BaseResponse.success(demoService.handleExceptionType(type));
+	}
+
+	/**
+	 * @RequestHeader
+	 * Accept-Encoding: gzip, deflate, br
+	 * Host: localhost:8080
+	 *
+	 * @param username
+	 * @param encoding
+	 * @param host
+	 * @param headsMap
+	 * @return
+	 */
+	@GetMapping("/header")
+	@ApiOperation(value = "测试@RequestHeader注解", notes = "获取请求Header接口")
+	public BaseResponse header(
+			// 由于请求头中不存在 name=xiaomaomao 这个信息,所以如果只用 value=xiaomaomao 会抛出异常
+			// 解决方案:
+			// 1、required 的默认值为 true ,也就是请求头中没有 name=xiaomaomao 会报错,将其值改为 false,即没有该头信息也不报错
+			// @RequestHeader(value = "xiaomaomao",required = "false") String username
+			// 2、不修改 required=true 这个默认值,当头信息中不包含 name=xiaomaomao ,给它一个默认值 hello xiao mao mao
+			// @RequestHeader(value = "xiaomaomao",defaultValue = "hello xiao mao mao") String username
+			@RequestHeader(value = "xiaomaomao", defaultValue = "hello xiao mao mao") String username,
+			// 将请求头中 name=Accept-Encoding 赋值给形参 encoding
+			@RequestHeader(value = "Accept-Encoding", required = false) String encoding,
+			// 将请求头中 name=Host 赋值给形参 host
+			@RequestHeader(value = "Host", required = false) String host,
+			// 将所有请求头的 name 和 value 封装到 Map 集合 headsMap 中
+			@RequestHeader(required = false) Map<String, String> headsMap,
+			@RequestHeader(required = false) MultiValueMap<String, String> multiValueMap,
+			@RequestHeader HttpHeaders httpHeaders) {
+		log.info("请求参数，username：{}, encoding： {}, host：{}, headsMap：{}", username, encoding, host,
+				JSONObject.toJSONString(headsMap));
+		Map map = new HashMap<String, Object>();
+		map.put("username", username);
+		map.put("Accept-Encoding", encoding);
+		map.put("Host", host);
+		map.put("headsMap", headsMap);
+		map.put("multiValueMap", multiValueMap);
+		map.put("httpHeaders", httpHeaders);
+		return BaseResponse.success(map);
 	}
 
 }
