@@ -95,3 +95,16 @@ sh init.sh
 ```http request
 http://localhost:8080/swagger-ui.html
 ```
+
+
+
+
+## 组件
+
+### mysql
+
+### redis
+
+### elasticsearch
+
+
